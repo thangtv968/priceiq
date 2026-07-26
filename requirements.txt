@@ -1,0 +1,9 @@
+requests>=2.31
+beautifulsoup4>=4.12
+playwright>=1.40
+sentence-transformers>=2.2
+pandas>=2.0
+streamlit>=1.30
+fastapi>=0.110
+uvicorn>=0.29
+pytest>=8.0

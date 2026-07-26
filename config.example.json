@@ -1,0 +1,16 @@
+{
+  "telegram": { "bot_token": "", "chat_id": "" },
+  "embedding_model": "all-MiniLM-L6-v2",
+  "match_threshold": 0.5,
+  "competitors": [
+    { "name": "PageTurner Books", "type": "books_toscrape", "url": "https://books.toscrape.com/", "max_pages": 1 },
+    { "name": "GameMart", "type": "web_scraping_dev", "url": "https://web-scraping.dev/products", "max_pages": 2 }
+  ],
+  "my_catalog": [
+    { "sku": "POT",   "name": "Energy Potion Drink",       "my_price": 5.49,  "map_price": 5.5,  "currency": "USD" },
+    { "sku": "CANDY", "name": "Chocolate Candy Box",       "my_price": 27.99, "map_price": 20.0, "currency": "USD" },
+    { "sku": "SHOES", "name": "Men Running Shoes",         "my_price": 45.0,  "map_price": 40.0, "currency": "USD" },
+    { "sku": "ATTIC", "name": "Light in the Attic poems",  "my_price": 48.0,  "map_price": 45.0, "currency": "GBP" },
+    { "sku": "SHARP", "name": "Sharp Objects novel",       "my_price": 50.0,  "map_price": 45.0, "currency": "GBP" }
+  ]
+}
