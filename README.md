@@ -2,6 +2,8 @@
 
 > Scrape competitor prices from anti-bot storefronts, **match products across different names/SKUs with AI**, and surface pricing position, repricing suggestions, and **MAP (minimum-advertised-price) violation alerts** — as a CLI, a dashboard, and a REST API.
 
+![PriceIQ dashboard](docs/dashboard.png)
+
 PriceIQ is not a "price scraper". A scraper gives you a spreadsheet. PriceIQ gives you a **decision**: *are competitors undercutting my floor price right now, and what should I do about it?*
 
 ---

@@ -1,0 +1,143 @@
+{
+  "ts": "2026-07-26T10:51:36+00:00",
+  "reports": [
+    {
+      "sku": "DORIAN",
+      "name": "The Picture of Dorian Gray by Oscar Wilde",
+      "my_price": 27.5,
+      "currency": "GBP",
+      "matches": [
+        [
+          "PageTurner Books",
+          "The Picture of Dorian Gray",
+          29.7,
+          0.8
+        ]
+      ],
+      "cheapest": 29.7,
+      "median_price": 29.7,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (27.5 ≤ 29.7). You could nudge up to ~29.70 for more margin.",
+      "map_price": 26.0,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "SENSE",
+      "name": "Sense & Sensibility (Jane Austen)",
+      "my_price": 41.0,
+      "currency": "GBP",
+      "matches": [
+        [
+          "PageTurner Books",
+          "Sense and Sensibility",
+          37.46,
+          0.79
+        ]
+      ],
+      "cheapest": 37.46,
+      "median_price": 37.46,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (41.0 > median 37.46). Consider lowering to ~37.46.",
+      "map_price": 35.0,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ALICE",
+      "name": "Alice's Adventures in Wonderland",
+      "my_price": 52.0,
+      "currency": "GBP",
+      "matches": [
+        [
+          "PageTurner Books",
+          "Alice in Wonderland (Alice's Adventures in Wonderland #1)",
+          55.53,
+          0.84
+        ]
+      ],
+      "cheapest": 55.53,
+      "median_price": 55.53,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (52.0 ≤ 55.53). You could nudge up to ~55.53 for more margin.",
+      "map_price": 50.0,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "SHARP",
+      "name": "Sharp Objects — Gillian Flynn",
+      "my_price": 49.99,
+      "currency": "GBP",
+      "matches": [
+        [
+          "NovelNook",
+          "Sharp Objects",
+          47.82,
+          0.69
+        ]
+      ],
+      "cheapest": 47.82,
+      "median_price": 47.82,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (49.99 > median 47.82). Consider lowering to ~47.82.",
+      "map_price": 49.0,
+      "map_violation": true,
+      "map_details": [
+        [
+          "NovelNook",
+          "Sharp Objects",
+          47.82
+        ]
+      ]
+    },
+    {
+      "sku": "SCARLET",
+      "name": "A Study in Scarlet (Sherlock Holmes)",
+      "my_price": 15.5,
+      "currency": "GBP",
+      "matches": [
+        [
+          "NovelNook",
+          "A Study in Scarlet (Sherlock Holmes #1)",
+          16.73,
+          0.99
+        ]
+      ],
+      "cheapest": 16.73,
+      "median_price": 16.73,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (15.5 ≤ 16.73). You could nudge up to ~16.73 for more margin.",
+      "map_price": 14.0,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ACKROYD",
+      "name": "The Murder of Roger Ackroyd — Agatha Christie",
+      "my_price": 46.0,
+      "currency": "GBP",
+      "matches": [
+        [
+          "NovelNook",
+          "The Murder of Roger Ackroyd (Hercule Poirot #4)",
+          44.1,
+          0.78
+        ]
+      ],
+      "cheapest": 44.1,
+      "median_price": 44.1,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (46.0 > median 44.10). Consider lowering to ~44.10.",
+      "map_price": 45.0,
+      "map_violation": true,
+      "map_details": [
+        [
+          "NovelNook",
+          "The Murder of Roger Ackroyd (Hercule Poirot #4)",
+          44.1
+        ]
+      ]
+    }
+  ]
+}

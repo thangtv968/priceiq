@@ -23,6 +23,10 @@ from priceiq import storage
 _HERE = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(_HERE, "config.json")
 EXAMPLE_CONFIG = os.path.join(_HERE, "config.example.json")
+DEMO_SNAPSHOT = os.path.join(_HERE, "demo_snapshot.json")
+# Hosted demo: no Playwright/browser available, so hide the live-scan button and
+# fall back to bundled sample data. Enabled by a DEMO_MODE marker file or PRICEIQ_DEMO=1.
+DEMO_MODE = os.path.exists(os.path.join(_HERE, "DEMO_MODE")) or os.environ.get("PRICEIQ_DEMO") == "1"
 
 st.set_page_config(page_title="PriceIQ — Price Intelligence", page_icon="💹", layout="wide")
 
@@ -63,7 +67,11 @@ def load_config() -> dict:
 
 @st.cache_data(ttl=3)
 def load_snapshot() -> dict:
-    return storage.load_snapshot()
+    snap = storage.load_snapshot()
+    if not snap and os.path.exists(DEMO_SNAPSHOT):
+        with open(DEMO_SNAPSHOT, encoding="utf-8") as f:
+            return json.load(f)
+    return snap
 
 
 @st.cache_data(ttl=3)
@@ -105,20 +113,24 @@ with st.sidebar:
     st.divider()
 
     telegram_on = bool((config.get("telegram") or {}).get("bot_token"))
-    st.write("**Run a new scan**")
-    send_alert = st.toggle("Send Telegram alert", value=telegram_on, disabled=not telegram_on,
-                           help="Toggle alerts when a floor-price (MAP) violation is found.")
-    if st.button("▶️  Scan competitors now", type="primary", width="stretch"):
-        with st.spinner("Scraping + AI product matching… (Playwright + embeddings)"):
-            code, tail = run_scan_subprocess(with_telegram=send_alert)
-        if code == 0:
-            st.success("Scan complete!")
-            st.cache_data.clear()
-        else:
-            st.error(f"Scan failed (exit {code}).")
-        with st.expander("Scan log"):
-            st.code(tail or "(no output)")
-        st.rerun()
+    if DEMO_MODE:
+        st.info("🔎 **Live demo** — showing sample data. Live scanning is disabled "
+                "in the hosted demo; clone the repo to run real scans.")
+    else:
+        st.write("**Run a new scan**")
+        send_alert = st.toggle("Send Telegram alert", value=telegram_on, disabled=not telegram_on,
+                               help="Toggle alerts when a floor-price (MAP) violation is found.")
+        if st.button("▶️  Scan competitors now", type="primary", width="stretch"):
+            with st.spinner("Scraping + AI product matching… (Playwright + embeddings)"):
+                code, tail = run_scan_subprocess(with_telegram=send_alert)
+            if code == 0:
+                st.success("Scan complete!")
+                st.cache_data.clear()
+            else:
+                st.error(f"Scan failed (exit {code}).")
+            with st.expander("Scan log"):
+                st.code(tail or "(no output)")
+            st.rerun()
 
     st.divider()
     st.write("**Configuration**")
