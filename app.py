@@ -231,15 +231,15 @@ with tab_compare:
                 alt.Chart(sub)
                 .mark_bar()
                 .encode(
-                    x=alt.X("price:Q", title="Price", scale=alt.Scale(zero=True)),
-                    y=alt.Y("who:N", title=None, sort="-x"),
-                    color=alt.Color("kind:N",
+                    x=alt.X("price:Q", title="Price"),
+                    y=alt.Y("who:N", title=None,
+                            sort=alt.SortField("price", order="descending")),
+                    color=alt.Color("kind:N", legend=None,
                                     scale=alt.Scale(domain=["you", "competitor"],
-                                                    range=["#4f46e5", "#c7ccf5"]),
-                                    legend=None),
+                                                    range=["#4f46e5", "#c7ccf5"])),
                     tooltip=["who", "price"],
                 )
-                .properties(height=28 * len(sub) + 20)
+                .properties(height=alt.Step(40))
             )
             st.altair_chart(chart, width="stretch")
             st.divider()
