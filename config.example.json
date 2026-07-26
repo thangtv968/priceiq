@@ -1,16 +1,18 @@
 {
   "telegram": { "bot_token": "", "chat_id": "" },
+  "store_name": "Willow & Page Books",
   "embedding_model": "all-MiniLM-L6-v2",
-  "match_threshold": 0.5,
+  "match_threshold": 0.55,
   "competitors": [
-    { "name": "PageTurner Books", "type": "books_toscrape", "url": "https://books.toscrape.com/", "max_pages": 1 },
-    { "name": "GameMart", "type": "web_scraping_dev", "url": "https://web-scraping.dev/products", "max_pages": 2 }
+    { "name": "PageTurner Books", "type": "books_toscrape",  "url": "https://books.toscrape.com/catalogue/category/books/classics_6/index.html", "max_pages": 1 },
+    { "name": "NovelNook",        "type": "books_playwright", "url": "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html",  "max_pages": 1 }
   ],
   "my_catalog": [
-    { "sku": "POT",   "name": "Energy Potion Drink",       "my_price": 5.49,  "map_price": 5.5,  "currency": "USD" },
-    { "sku": "CANDY", "name": "Chocolate Candy Box",       "my_price": 27.99, "map_price": 20.0, "currency": "USD" },
-    { "sku": "SHOES", "name": "Men Running Shoes",         "my_price": 45.0,  "map_price": 40.0, "currency": "USD" },
-    { "sku": "ATTIC", "name": "Light in the Attic poems",  "my_price": 48.0,  "map_price": 45.0, "currency": "GBP" },
-    { "sku": "SHARP", "name": "Sharp Objects novel",       "my_price": 50.0,  "map_price": 45.0, "currency": "GBP" }
+    { "sku": "DORIAN",  "name": "The Picture of Dorian Gray by Oscar Wilde",        "my_price": 27.50, "map_price": 26.00, "currency": "GBP" },
+    { "sku": "SENSE",   "name": "Sense & Sensibility (Jane Austen)",                "my_price": 41.00, "map_price": 35.00, "currency": "GBP" },
+    { "sku": "ALICE",   "name": "Alice's Adventures in Wonderland",                 "my_price": 52.00, "map_price": 50.00, "currency": "GBP" },
+    { "sku": "SHARP",   "name": "Sharp Objects — Gillian Flynn",                    "my_price": 49.99, "map_price": 49.00, "currency": "GBP" },
+    { "sku": "SCARLET", "name": "A Study in Scarlet (Sherlock Holmes)",             "my_price": 15.50, "map_price": 14.00, "currency": "GBP" },
+    { "sku": "ACKROYD", "name": "The Murder of Roger Ackroyd — Agatha Christie",    "my_price": 46.00, "map_price": 45.00, "currency": "GBP" }
   ]
 }

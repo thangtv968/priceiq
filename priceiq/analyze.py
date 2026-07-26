@@ -63,8 +63,10 @@ def analyze(my_products: list, match_map: dict) -> list:
             rep.suggestion = f"Ở khoảng giữa (dưới trung vị {rep.median_price:.2f}) — vị thế ổn."
         else:
             rep.position = "expensive"
+            target = (f"~{rep.cheapest:.2f}" if abs(rep.cheapest - rep.median_price) < 0.01
+                      else f"~{rep.cheapest:.2f}–{rep.median_price:.2f}")
             rep.suggestion = (f"Đang ĐẮT ({my} > trung vị {rep.median_price:.2f}). "
-                              f"Cân nhắc giảm về ~{rep.cheapest:.2f}–{rep.median_price:.2f}.")
+                              f"Cân nhắc giảm về {target}.")
         reports.append(rep)
     return reports
 

@@ -134,7 +134,9 @@ with st.sidebar:
 
 # --- header ---------------------------------------------------------------
 st.title("💹 PriceIQ — Competitor Price Intelligence")
-st.caption("Scrape giá đối thủ → AI khớp sản phẩm khác tên/SKU → phát hiện phá giá sàn (MAP) & đề xuất chỉnh giá.")
+_store = config.get("store_name", "")
+st.caption((f"🏪 **{_store}** · " if _store else "")
+           + "Scrape giá đối thủ → AI khớp sản phẩm khác tên/SKU → phát hiện phá giá sàn (MAP) & đề xuất chỉnh giá.")
 
 if not reports:
     st.info("Chưa có dữ liệu quét. Bấm **▶️ Quét đối thủ ngay** ở thanh bên để chạy lần đầu.")

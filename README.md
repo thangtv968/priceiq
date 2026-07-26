@@ -8,7 +8,7 @@ PriceIQ is not a "price scraper". A scraper gives you a spreadsheet. PriceIQ giv
 
 ## Why it's different
 
-Most price-tracking gigs break on one hard problem: **the same product is listed under different titles on every store.** "Sony WH-1000XM5" vs "Sony XM5 Wireless Headphones (Black)" vs "WH1000XM5/B". Exact-string matching misses them; manual matching doesn't scale.
+Most price-tracking gigs break on one hard problem: **the same product is listed under a different title in every store.** "A Study in Scarlet (Sherlock Holmes #1)" vs "A Study in Scarlet: A Sherlock Holmes Mystery" vs "Study in Scarlet, A". Exact-string matching misses them; manual matching doesn't scale.
 
 PriceIQ matches products by **meaning** using local sentence-embeddings (cosine similarity), so it links listings that no keyword match would catch — with a confidence score on every match, and a human-in-the-loop review surface rather than a black box.
 
@@ -92,18 +92,21 @@ docker compose up --build      # dashboard :8501  +  api :8000
 
 ```jsonc
 {
+  "store_name": "Willow & Page Books",
   "embedding_model": "all-MiniLM-L6-v2",
-  "match_threshold": 0.5,                      // cosine cutoff for "same product"
+  "match_threshold": 0.55,                     // cosine cutoff for "same product"
   "telegram": { "bot_token": "...", "chat_id": "..." },
   "competitors": [
-    { "name": "PageTurner Books", "type": "books_toscrape",  "url": "...", "max_pages": 1 },
-    { "name": "GameMart",         "type": "web_scraping_dev", "url": "...", "max_pages": 2 }
+    { "name": "PageTurner Books", "type": "books_toscrape",  "url": ".../classics...", "max_pages": 1 },
+    { "name": "NovelNook",        "type": "books_playwright", "url": ".../mystery...",  "max_pages": 1 }
   ],
   "my_catalog": [
-    { "sku": "POT", "name": "Energy Potion Drink", "my_price": 5.49, "map_price": 5.5, "currency": "USD" }
+    { "sku": "DORIAN", "name": "The Picture of Dorian Gray by Oscar Wilde", "my_price": 27.50, "map_price": 26.0, "currency": "GBP" }
   ]
 }
 ```
+
+> `books_toscrape` scrapes static HTML; `books_playwright` scrapes the same shop through a **real headless browser** — the path a JS-rendered / anti-bot store needs.
 
 Add a competitor by writing a small fetcher in `sources.py` and registering it in `FETCHERS` — the analysis layer is source-agnostic.
 
@@ -134,7 +137,7 @@ The core pricing/MAP logic is covered by deterministic unit tests (no network, n
 
 ## Legal & ethical scope
 
-This demo scrapes **public sandbox sites built for scraping practice** (`books.toscrape.com`, `web-scraping.dev`) — never a live retailer. In production, PriceIQ is designed to:
+This demo scrapes a **public sandbox site built for scraping practice** (`books.toscrape.com`) via two techniques — never a live retailer. In production, PriceIQ is designed to:
 
 - collect **prices and product data only** (non-personal — outside GDPR's scope), never personal/review data;
 - respect each target's `robots.txt`, rate limits, and Terms of Service;

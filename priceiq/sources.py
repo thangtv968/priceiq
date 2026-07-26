@@ -1,8 +1,12 @@
-"""Competitor sources: scrape product listings (name + price).
+"""Competitor sources: scrape book listings (name + price) from rival shops.
 
-Two fetchers demonstrate two techniques:
-  - books_toscrape : static HTML via requests + BeautifulSoup.
-  - web_scraping_dev: headless browser via Playwright (JS-capable path).
+Three fetchers, two techniques — so the same pipeline covers both a plain-HTML
+shop and a JavaScript-heavy / anti-bot one:
+  - books_toscrape  : static HTML via requests + BeautifulSoup.
+  - books_playwright: the same site rendered in a real headless browser
+                      (Playwright/Chromium) — the path JS/anti-bot shops need.
+  - web_scraping_dev: headless-browser scrape of a different sandbox, kept as a
+                      second JS example (not used by the bookstore demo).
 Each returns a list[Listing]; the analysis layer is source-agnostic.
 """
 from __future__ import annotations
@@ -34,11 +38,12 @@ def _num(text: str) -> Optional[float]:
 
 
 def fetch_books_toscrape(competitor: str, base_url: str, max_pages: int = 3, delay: float = 0.5) -> list[Listing]:
-    """Static scrape (requests + BeautifulSoup)."""
+    """Static scrape (requests + BeautifulSoup). `base_url` is any listing page —
+    a category index or the full catalogue; pagination follows the 'next' link."""
     session = requests.Session()
     session.headers.update(HEADERS)
     listings: list[Listing] = []
-    url: Optional[str] = urljoin(base_url, "catalogue/page-1.html")
+    url: Optional[str] = base_url
     page = 1
     while url and page <= max_pages:
         resp = session.get(url, timeout=20)
@@ -88,8 +93,43 @@ def fetch_web_scraping_dev(competitor: str, base_url: str, max_pages: int = 3, d
     return listings
 
 
+def fetch_books_playwright(competitor: str, base_url: str, max_pages: int = 3, delay: float = 0.5) -> list[Listing]:
+    """Browser-rendered scrape of a books.toscrape listing via Playwright
+    (headless Chromium). Same data as the static path, but proves the pipeline
+    can drive a real browser — what JS-rendered / anti-bot shops require."""
+    from playwright.sync_api import sync_playwright
+
+    listings: list[Listing] = []
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        try:
+            pg = browser.new_page(user_agent=HEADERS["User-Agent"])
+            url: Optional[str] = base_url
+            page = 1
+            while url and page <= max_pages:
+                pg.goto(url, wait_until="domcontentloaded", timeout=30000)
+                for card in pg.query_selector_all("article.product_pod"):
+                    a = card.query_selector("h3 a")
+                    price_el = card.query_selector("p.price_color")
+                    if not a or not price_el:
+                        continue
+                    href = a.get_attribute("href") or ""
+                    title = (a.get_attribute("title") or a.inner_text()).strip()
+                    listings.append(Listing(competitor, title, _num(price_el.inner_text()),
+                                            "GBP", urljoin(url, href)))
+                nxt = pg.query_selector("li.next a")
+                nhref = nxt.get_attribute("href") if nxt else None
+                url = urljoin(url, nhref) if nhref else None
+                page += 1
+                time.sleep(delay)
+        finally:
+            browser.close()
+    return listings
+
+
 FETCHERS = {
     "books_toscrape": fetch_books_toscrape,
+    "books_playwright": fetch_books_playwright,
     "web_scraping_dev": fetch_web_scraping_dev,
 }
 
