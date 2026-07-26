@@ -153,4 +153,10 @@ Python · Playwright · BeautifulSoup · sentence-transformers · pandas · Stre
 
 ---
 
+## License
+
+© 2026 **thangtv968** — all rights reserved. Published as a **portfolio showcase, for evaluation only**; not licensed for reuse or redistribution (see [`LICENSE`](LICENSE)). The full production engine — additional competitor adapters, scheduling, hardening and client onboarding — is maintained privately and provided to clients under a separate agreement.
+
+---
+
 *Built as a portfolio flagship for automation + AI data-intelligence work.*

@@ -1,0 +1,22 @@
+PriceIQ — Proprietary License
+Copyright (c) 2026 thangtv968. All rights reserved.
+
+This repository is published as a PORTFOLIO SHOWCASE, for EVALUATION ONLY.
+
+You MAY:
+  - view and read the source code;
+  - run it locally to evaluate its capabilities.
+
+You MAY NOT, without prior written permission from the copyright holder:
+  - copy, modify, or create derivative works of this code;
+  - redistribute, sublicense, publish, or sell any part of it;
+  - use it, in whole or in part, in any product or commercial service.
+
+The production engine — additional competitor adapters, scheduling, hardening,
+and client onboarding — is maintained in a private repository and provided to
+clients under a separate agreement.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS
+USE.
