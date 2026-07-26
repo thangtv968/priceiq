@@ -1,0 +1,2 @@
+Marker: enables hosted-demo mode in app.py (hides the live-scan button and
+serves bundled demo_snapshot.json). Present only on the `demo` branch.
