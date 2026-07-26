@@ -48,7 +48,7 @@ def analyze(my_products: list, match_map: dict) -> list:
 
         if not comp_prices:
             rep.position = "no-data"
-            rep.suggestion = "Chưa khớp được trên nguồn nào — mở rộng nguồn hoặc chỉnh tên trong catalog."
+            rep.suggestion = "No match on any source — add more sources or adjust the catalog name."
             reports.append(rep)
             continue
 
@@ -56,38 +56,38 @@ def analyze(my_products: list, match_map: dict) -> list:
         rep.median_price = median(comp_prices)
         if my <= rep.cheapest:
             rep.position = "cheapest"
-            rep.suggestion = (f"Đang RẺ NHẤT ({my} ≤ {rep.cheapest}). "
-                              f"Có thể nâng nhẹ về ~{rep.median_price:.2f} để tăng biên.")
+            rep.suggestion = (f"CHEAPEST ({my} ≤ {rep.cheapest}). "
+                              f"You could nudge up to ~{rep.median_price:.2f} for more margin.")
         elif my <= rep.median_price:
             rep.position = "mid"
-            rep.suggestion = f"Ở khoảng giữa (dưới trung vị {rep.median_price:.2f}) — vị thế ổn."
+            rep.suggestion = f"Mid-range (below the median {rep.median_price:.2f}) — solid position."
         else:
             rep.position = "expensive"
             target = (f"~{rep.cheapest:.2f}" if abs(rep.cheapest - rep.median_price) < 0.01
                       else f"~{rep.cheapest:.2f}–{rep.median_price:.2f}")
-            rep.suggestion = (f"Đang ĐẮT ({my} > trung vị {rep.median_price:.2f}). "
-                              f"Cân nhắc giảm về {target}.")
+            rep.suggestion = (f"EXPENSIVE ({my} > median {rep.median_price:.2f}). "
+                              f"Consider lowering to {target}.")
         reports.append(rep)
     return reports
 
 
 def format_report(reports: list) -> str:
-    """Plain-text report (for CLI / Telegram)."""
-    lines = ["=== PriceIQ — Báo cáo vị thế giá ===\n"]
+    """Plain-text report (for the CLI / Telegram)."""
+    lines = ["=== PriceIQ — Price position report ===\n"]
     alerts = 0
     for r in reports:
-        lines.append(f"• {r.name}  (giá của bạn: {r.my_price} {r.currency})")
+        lines.append(f"• {r.name}  (your price: {r.my_price} {r.currency})")
         if r.position == "no-data":
             lines.append(f"    ⚠️ {r.suggestion}")
         else:
-            lines.append(f"    Vị thế: {r.position} | rẻ nhất đối thủ: {r.cheapest} | trung vị: {r.median_price:.2f}")
+            lines.append(f"    Position: {r.position} | cheapest rival: {r.cheapest} | median: {r.median_price:.2f}")
             lines.append(f"    → {r.suggestion}")
-            lines.append(f"    Khớp {len(r.matches)} listing: " +
+            lines.append(f"    Matched {len(r.matches)} listings: " +
                          ", ".join(f"{c}:{pr}({sc})" for c, n, pr, sc in r.matches[:4]))
         if r.map_violation:
             alerts += 1
-            hits = "; ".join(f"{c} bán {pr}" for c, n, pr in r.map_details)
-            lines.append(f"    🚨 PHÁ GIÁ SÀN (MAP {r.map_price}): {hits}")
+            hits = "; ".join(f"{c} at {pr}" for c, n, pr in r.map_details)
+            lines.append(f"    🚨 FLOOR-PRICE VIOLATION (MAP {r.map_price}): {hits}")
         lines.append("")
-    lines.append(f"Tổng: {len(reports)} sản phẩm, {alerts} cảnh báo phá giá sàn.")
+    lines.append(f"Total: {len(reports)} products, {alerts} floor-price alerts.")
     return "\n".join(lines)

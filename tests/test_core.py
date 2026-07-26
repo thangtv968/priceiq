@@ -68,5 +68,5 @@ def test_format_report_counts_alerts():
     my = [{"sku": "A", "name": "W", "my_price": 10.0, "map_price": 9.0, "currency": "USD"}]
     reports = analyze.analyze(my, {"A": [_match("S", "W2", 8.0)]})
     text = analyze.format_report(reports)
-    assert "1 cảnh báo" in text
+    assert "1 floor-price" in text
     assert "🚨" in text

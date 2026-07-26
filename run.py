@@ -44,7 +44,7 @@ def run_scan(config: dict) -> list:
     for comp in config.get("competitors", []):
         try:
             got = sources.scrape_competitor(comp)
-            print(f"✓ {comp['name']}: {len(got)} listing")
+            print(f"✓ {comp['name']}: {len(got)} listings")
             all_listings.extend(got)
         except Exception as err:
             print(f"✗ {comp.get('name', '?')}: {err}", file=sys.stderr)
@@ -81,8 +81,8 @@ def main() -> None:
 
     alerts = [r for r in reports if r.map_violation]
     if alerts and not args.no_telegram:
-        msg = "🚨 PriceIQ — cảnh báo phá giá sàn (MAP):\n" + "\n".join(
-            f"- {r.name}: " + "; ".join(f"{c} bán {pr}" for c, n, pr in r.map_details)
+        msg = "🚨 PriceIQ — floor-price (MAP) violation alert:\n" + "\n".join(
+            f"- {r.name}: " + "; ".join(f"{c} at {pr}" for c, n, pr in r.map_details)
             for r in alerts)
         if notify_telegram(config, msg):
             print("[telegram] alert sent")

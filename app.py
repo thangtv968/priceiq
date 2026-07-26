@@ -48,10 +48,10 @@ st.markdown(
 )
 
 _POSITION_PILL = {
-    "cheapest": ("pill-cheap", "RẺ NHẤT"),
-    "mid": ("pill-mid", "TẦM GIỮA"),
-    "expensive": ("pill-exp", "ĐANG ĐẮT"),
-    "no-data": ("pill-none", "CHƯA KHỚP"),
+    "cheapest": ("pill-cheap", "CHEAPEST"),
+    "mid": ("pill-mid", "MID-RANGE"),
+    "expensive": ("pill-exp", "EXPENSIVE"),
+    "no-data": ("pill-none", "NO MATCH"),
 }
 
 
@@ -105,30 +105,30 @@ with st.sidebar:
     st.divider()
 
     telegram_on = bool((config.get("telegram") or {}).get("bot_token"))
-    st.write("**Chạy quét mới**")
-    send_alert = st.toggle("Gửi cảnh báo Telegram", value=telegram_on, disabled=not telegram_on,
-                           help="Bật/tắt gửi alert khi phát hiện phá giá sàn.")
-    if st.button("▶️  Quét đối thủ ngay", type="primary", width="stretch"):
-        with st.spinner("Đang scrape + AI khớp sản phẩm… (Playwright + embeddings)"):
+    st.write("**Run a new scan**")
+    send_alert = st.toggle("Send Telegram alert", value=telegram_on, disabled=not telegram_on,
+                           help="Toggle alerts when a floor-price (MAP) violation is found.")
+    if st.button("▶️  Scan competitors now", type="primary", width="stretch"):
+        with st.spinner("Scraping + AI product matching… (Playwright + embeddings)"):
             code, tail = run_scan_subprocess(with_telegram=send_alert)
         if code == 0:
-            st.success("Quét xong!")
+            st.success("Scan complete!")
             st.cache_data.clear()
         else:
-            st.error(f"Quét lỗi (exit {code}).")
-        with st.expander("Log lần quét"):
+            st.error(f"Scan failed (exit {code}).")
+        with st.expander("Scan log"):
             st.code(tail or "(no output)")
         st.rerun()
 
     st.divider()
-    st.write("**Cấu hình**")
+    st.write("**Configuration**")
     st.markdown(
-        f"- Model khớp: `{config.get('embedding_model', 'all-MiniLM-L6-v2')}`\n"
-        f"- Ngưỡng khớp: `{config.get('match_threshold', 0.5)}`\n"
-        f"- Nguồn đối thủ: **{len(config.get('competitors', []))}**\n"
-        f"- Telegram: {'✅ bật' if telegram_on else '⚪ tắt'}"
+        f"- Matching model: `{config.get('embedding_model', 'all-MiniLM-L6-v2')}`\n"
+        f"- Match threshold: `{config.get('match_threshold', 0.5)}`\n"
+        f"- Competitor sources: **{len(config.get('competitors', []))}**\n"
+        f"- Telegram: {'✅ on' if telegram_on else '⚪ off'}"
     )
-    with st.expander("Nguồn đang theo dõi"):
+    with st.expander("Tracked sources"):
         for c in config.get("competitors", []):
             st.markdown(f"- **{c['name']}** · `{c['type']}`")
 
@@ -136,10 +136,10 @@ with st.sidebar:
 st.title("💹 PriceIQ — Competitor Price Intelligence")
 _store = config.get("store_name", "")
 st.caption((f"🏪 **{_store}** · " if _store else "")
-           + "Scrape giá đối thủ → AI khớp sản phẩm khác tên/SKU → phát hiện phá giá sàn (MAP) & đề xuất chỉnh giá.")
+           + "Scrape competitor prices → AI-match products across titles/SKUs → detect floor-price (MAP) violations & suggest repricing.")
 
 if not reports:
-    st.info("Chưa có dữ liệu quét. Bấm **▶️ Quét đối thủ ngay** ở thanh bên để chạy lần đầu.")
+    st.info("No scan data yet. Click **▶️ Scan competitors now** in the sidebar to run the first scan.")
     st.stop()
 
 # --- KPI row --------------------------------------------------------------
@@ -149,26 +149,26 @@ n_listings = sum(len(r.get("matches", [])) for r in reports)
 n_alerts = sum(1 for r in reports if r.get("map_violation"))
 
 k1, k2, k3, k4 = st.columns(4)
-k1.metric("Sản phẩm theo dõi", n_products)
-k2.metric("Khớp được đối thủ", f"{n_matched}/{n_products}")
-k3.metric("Listing đối thủ khớp", n_listings)
-k4.metric("🚨 Cảnh báo phá giá", n_alerts, delta=None,
+k1.metric("Products tracked", n_products)
+k2.metric("Competitors matched", f"{n_matched}/{n_products}")
+k3.metric("Competitor listings matched", n_listings)
+k4.metric("🚨 Floor-price alerts", n_alerts, delta=None,
           delta_color="inverse")
-st.caption(f"Lần quét gần nhất: `{scanned_at}` · Nguồn: {len(config.get('competitors', []))} site")
+st.caption(f"Last scan: `{scanned_at}` · Sources: {len(config.get('competitors', []))} site(s)")
 
 # --- MAP alert banner -----------------------------------------------------
 alert_reports = [r for r in reports if r.get("map_violation")]
 if alert_reports:
     lines = []
     for r in alert_reports:
-        who = "; ".join(f"**{c}** bán {pr} {r.get('currency','')}" for c, n, pr in r.get("map_details", []))
-        lines.append(f"- **{r['name']}** (sàn MAP {r.get('map_price')}): {who}")
-    st.error("### 🚨 Phá giá sàn (MAP) đang diễn ra\n" + "\n".join(lines))
+        who = "; ".join(f"**{c}** at {pr} {r.get('currency','')}" for c, n, pr in r.get("map_details", []))
+        lines.append(f"- **{r['name']}** (MAP floor {r.get('map_price')}): {who}")
+    st.error("### 🚨 Active floor-price (MAP) violations\n" + "\n".join(lines))
 
 st.divider()
 
 tab_overview, tab_compare, tab_history, tab_matches = st.tabs(
-    ["📊 Tổng quan", "📈 So sánh giá", "🕒 Lịch sử", "🔎 Chi tiết khớp"]
+    ["📊 Overview", "📈 Price comparison", "🕒 History", "🔎 Match details"]
 )
 
 # --- tab: overview --------------------------------------------------------
@@ -178,24 +178,24 @@ with tab_overview:
         with c1:
             st.markdown(f"#### {r['name']}  {pill(r.get('position','no-data'))}", unsafe_allow_html=True)
             cur = r.get("currency", "")
-            bits = [f"Giá của bạn: **{r['my_price']} {cur}**"]
+            bits = [f"Your price: **{r['my_price']} {cur}**"]
             if r.get("cheapest") is not None:
-                bits.append(f"Rẻ nhất đối thủ: **{r['cheapest']} {cur}**")
+                bits.append(f"Cheapest rival: **{r['cheapest']} {cur}**")
             if r.get("median_price") is not None:
-                bits.append(f"Trung vị: **{r['median_price']:.2f} {cur}**")
+                bits.append(f"Median: **{r['median_price']:.2f} {cur}**")
             st.markdown(" · ".join(bits))
             st.markdown(f"<span class='muted'>💡 {r.get('suggestion','')}</span>", unsafe_allow_html=True)
         with c2:
             if r.get("map_violation"):
-                st.error(f"🚨 Phá giá sàn (MAP {r.get('map_price')})")
+                st.error(f"🚨 Floor-price violation (MAP {r.get('map_price')})")
             elif r.get("position") == "cheapest":
-                st.success("Bạn đang rẻ nhất thị trường")
+                st.success("You're the cheapest on the market")
             elif r.get("position") == "expensive":
-                st.warning("Bạn đang đắt hơn trung vị")
+                st.warning("You're above the median")
             elif r.get("position") == "no-data":
-                st.info("Chưa khớp — cân nhắc chỉnh tên/nguồn")
+                st.info("No match — consider adjusting names/sources")
             else:
-                st.info("Vị thế giá ổn")
+                st.info("Healthy price position")
         st.divider()
 
 # --- tab: price comparison ------------------------------------------------
@@ -204,12 +204,12 @@ with tab_compare:
     for r in reports:
         cur = r.get("currency", "")
         label = f"{r['name']} ({cur})"
-        rows.append({"product": label, "who": "Bạn", "price": r["my_price"], "kind": "you"})
+        rows.append({"product": label, "who": "You", "price": r["my_price"], "kind": "you"})
         for comp, name, price, score in r.get("matches", []):
             if price is not None:
                 rows.append({"product": label, "who": comp, "price": price, "kind": "competitor"})
     if not rows:
-        st.info("Chưa có giá để so sánh.")
+        st.info("No prices to compare yet.")
     else:
         cdf = pd.DataFrame(rows)
         for label in cdf["product"].unique():
@@ -219,7 +219,7 @@ with tab_compare:
                 alt.Chart(sub)
                 .mark_bar()
                 .encode(
-                    x=alt.X("price:Q", title="Giá", scale=alt.Scale(zero=True)),
+                    x=alt.X("price:Q", title="Price", scale=alt.Scale(zero=True)),
                     y=alt.Y("who:N", title=None, sort="-x"),
                     color=alt.Color("kind:N",
                                     scale=alt.Scale(domain=["you", "competitor"],
@@ -236,20 +236,20 @@ with tab_compare:
 with tab_history:
     hdf = history_df()
     if hdf.empty or hdf["timestamp"].nunique() < 2:
-        st.info("Cần ≥2 lần quét để vẽ xu hướng giá theo thời gian. "
-                "Bấm **▶️ Quét đối thủ ngay** vài lần để tích lũy lịch sử.")
+        st.info("Need ≥2 scans to plot price trends over time. "
+                "Click **▶️ Scan competitors now** a few times to build history.")
         if not hdf.empty:
             st.dataframe(hdf.sort_values("timestamp", ascending=False), width="stretch", hide_index=True)
     else:
         listings = sorted(hdf["listing"].unique())
-        pick = st.multiselect("Chọn listing để xem xu hướng", listings, default=listings[:5])
+        pick = st.multiselect("Choose listings to view trends", listings, default=listings[:5])
         sub = hdf[hdf["listing"].isin(pick)]
         line = (
             alt.Chart(sub)
             .mark_line(point=True)
             .encode(
-                x=alt.X("timestamp:T", title="Thời gian"),
-                y=alt.Y("price:Q", title="Giá", scale=alt.Scale(zero=False)),
+                x=alt.X("timestamp:T", title="Time"),
+                y=alt.Y("price:Q", title="Price", scale=alt.Scale(zero=False)),
                 color=alt.Color("listing:N", title="Listing"),
                 tooltip=["timestamp", "competitor", "listing", "price"],
             )
@@ -259,21 +259,21 @@ with tab_history:
 
 # --- tab: match detail ----------------------------------------------------
 with tab_matches:
-    st.caption("AI khớp sản phẩm của bạn với listing đối thủ theo *ngữ nghĩa* (điểm cosine 0–1).")
+    st.caption("AI matches your products to competitor listings by *meaning* (cosine score 0–1).")
     for r in reports:
-        with st.expander(f"{r['name']} — {len(r.get('matches', []))} listing khớp"):
+        with st.expander(f"{r['name']} — {len(r.get('matches', []))} listings matched"):
             if not r.get("matches"):
-                st.write("Chưa khớp listing nào.")
+                st.write("No listings matched.")
                 continue
             mdf = pd.DataFrame(
-                [{"Đối thủ": c, "Listing": n, "Giá": pr, "Độ khớp": sc}
+                [{"Competitor": c, "Listing": n, "Price": pr, "Match": sc}
                  for c, n, pr, sc in r["matches"]]
             )
             st.dataframe(
                 mdf, width="stretch", hide_index=True,
                 column_config={
-                    "Độ khớp": st.column_config.ProgressColumn(
-                        "Độ khớp (AI)", min_value=0.0, max_value=1.0, format="%.2f"),
-                    "Giá": st.column_config.NumberColumn(format="%.2f"),
+                    "Match": st.column_config.ProgressColumn(
+                        "Match (AI)", min_value=0.0, max_value=1.0, format="%.2f"),
+                    "Price": st.column_config.NumberColumn(format="%.2f"),
                 },
             )
