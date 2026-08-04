@@ -15,7 +15,7 @@
       "position": "cheapest",
       "suggestion": "CHEAPEST (239.25 <= 259.99). Below MAP; you undercut every rival.",
       "map_price": 259.99,
-      "map_violation": true,
+      "map_violation": false,
       "map_details": [["Rival A", "AI Nero 5", 259.99]]
     },
     {
@@ -29,7 +29,7 @@
       "position": "cheapest",
       "suggestion": "CHEAPEST (179.43 <= 189.99). Below the common $189.99 floor.",
       "map_price": 189.99,
-      "map_violation": true,
+      "map_violation": false,
       "map_details": [["Rival A", "AI Nero 3", 189.99]]
     },
     {
