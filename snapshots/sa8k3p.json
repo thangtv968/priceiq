@@ -1,0 +1,78 @@
+{
+  "store_name": "SaltwaterAquarium.com",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-A80",
+      "name": "Kessil A80 Tuna Blue LED",
+      "my_price": 149.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A80 Tuna Blue", 129.0, 0.98], ["Rival B", "Kessil A80 Tuna Blue Nano LED", 149.0, 0.99]],
+      "cheapest": 129.0,
+      "median_price": 139.0,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (149 > 139 median). Rival A is $20 under you on the same light.",
+      "map_price": 149.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil A80 Tuna Blue", 129.0]]
+    },
+    {
+      "sku": "AI-PRIME-16HD-BLK",
+      "name": "AI Prime 16HD Reef LED, Black",
+      "my_price": 264.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Prime 16HD Reef LED Black", 264.99, 0.99]],
+      "cheapest": 264.99,
+      "median_price": 264.99,
+      "position": "cheapest",
+      "suggestion": "Priced level with the market (264.99 = 264.99). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-VECTRA-M2",
+      "name": "EcoTech Vectra M2 DC Return Pump (2000 GPH)",
+      "my_price": 499.99,
+      "currency": "USD",
+      "matches": [["Rival A", "EcoTech Vectra M2 DC Return Pump", 499.99, 0.99]],
+      "cheapest": 499.99,
+      "median_price": 499.99,
+      "position": "cheapest",
+      "suggestion": "Matched to the market (499.99 = 499.99). Holding fixed MAP price.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-SPEC-CTRL-X",
+      "name": "Kessil Spectral Controller X",
+      "my_price": 109.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil Spectral Controller X", 109.0, 0.99]],
+      "cheapest": 109.0,
+      "median_price": 109.0,
+      "position": "cheapest",
+      "suggestion": "Level with the market (109 = 109). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-H80",
+      "name": "Kessil H80 Tuna Flora Refugium LED",
+      "my_price": 149.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil H80 Tuna Flora Refugium LED", 149.0, 0.99], ["Rival B", "Kessil H80 Tuna Flora LED", 149.0, 0.99]],
+      "cheapest": 149.0,
+      "median_price": 149.0,
+      "position": "cheapest",
+      "suggestion": "Level with both rivals (149 = 149). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

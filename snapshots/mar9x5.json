@@ -1,0 +1,78 @@
+{
+  "store_name": "MarineAndReef.com",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-A80",
+      "name": "Kessil A80 Tuna Blue LED",
+      "my_price": 149.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A80 Tuna Blue", 129.0, 0.98], ["Rival B", "Kessil A80 Tuna Blue Nano LED", 149.0, 0.99]],
+      "cheapest": 129.0,
+      "median_price": 139.0,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (149 > 139 median). Rival A is $20 under you on the same light.",
+      "map_price": 149.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil A80 Tuna Blue", 129.0]]
+    },
+    {
+      "sku": "KESSIL-A360XE-TB",
+      "name": "Kessil A360XE Tuna Blue LED",
+      "my_price": 499.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A360XE Tuna Blue LED", 499.0, 0.99]],
+      "cheapest": 499.0,
+      "median_price": 499.0,
+      "position": "cheapest",
+      "suggestion": "Level with the market (499 = 499). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-A160WE-TB",
+      "name": "Kessil A160WE Tuna Blue LED",
+      "my_price": 289.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A160WE Tuna Blue LED", 289.0, 0.99]],
+      "cheapest": 289.0,
+      "median_price": 289.0,
+      "position": "cheapest",
+      "suggestion": "Level with the market (289 = 289). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-A500X-TB",
+      "name": "Kessil A500X Tuna Blue LED",
+      "my_price": 849.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A500X Tuna Blue LED", 849.0, 0.99], ["Rival B", "Kessil A500X Tuna Blue LED", 849.0, 0.99]],
+      "cheapest": 849.0,
+      "median_price": 849.0,
+      "position": "cheapest",
+      "suggestion": "Level with both rivals (849 = 849). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-SPEC-CTRL-X",
+      "name": "Kessil Spectral Controller X",
+      "my_price": 109.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil Spectral Controller X", 109.0, 0.99]],
+      "cheapest": 109.0,
+      "median_price": 109.0,
+      "position": "cheapest",
+      "suggestion": "Level with the market (109 = 109). No change needed.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}
