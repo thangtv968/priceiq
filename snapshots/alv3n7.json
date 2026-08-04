@@ -1,0 +1,92 @@
+{
+  "store_name": "Aqua Lab Aquaria",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B", "Rival C"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "ECO-VORTECH-BATT-BACKUP",
+      "name": "EcoTech VorTech Battery Backup",
+      "my_price": 215.0,
+      "currency": "USD",
+      "matches": [["Rival A", "EcoTech Marine VorTech Battery Backup", 249.99, 0.99], ["Rival B", "EcoTech Marine VorTech Battery Backup", 269.99, 0.99]],
+      "cheapest": 215.0,
+      "median_price": 259.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (215.00 <= 249.99). You are $34.99 under the nearest rival.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-TRACK-30",
+      "name": "EcoTech Multi-Light RMS Track 30.5\"",
+      "my_price": 65.0,
+      "currency": "USD",
+      "matches": [["Rival A", "EcoTech Marine Radion Multi-Light RMS Track 30.5\"", 69.99, 0.98]],
+      "cheapest": 65.0,
+      "median_price": 69.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (65.00 <= 69.99). You are $4.99 under the rival.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-ARM-KIT",
+      "name": "EcoTech Multi-Light RMS Arm Kit",
+      "my_price": 155.0,
+      "currency": "USD",
+      "matches": [["Rival B", "EcoTech Marine RMS Multi-Light Mounting Arms", 189.99, 0.9], ["Rival C", "EcoTech Marine RMS Multi Radion Tank Mount Arms", 189.99, 0.9]],
+      "cheapest": 155.0,
+      "median_price": 189.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (155.00 <= 189.99). You are $34.99 under both rivals.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-SLIDE-XR15",
+      "name": "EcoTech Multi-Light RMS Slide (XR15)",
+      "my_price": 21.0,
+      "currency": "USD",
+      "matches": [["Rival A", "EcoTech Marine RMS Slide Mount for Radion (XR15)", 34.99, 0.92], ["Rival B", "EcoTech Marine RMS Slide for Radion XR15 G5 & G6", 34.99, 0.92]],
+      "cheapest": 21.0,
+      "median_price": 34.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (21.00 <= 34.99). You are $13.99 under both rivals.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-VORTECH-MP40QD",
+      "name": "EcoTech VorTech MP40mQD QuietDrive Pump",
+      "my_price": 480.0,
+      "currency": "USD",
+      "matches": [],
+      "cheapest": null,
+      "median_price": null,
+      "position": "no-data",
+      "suggestion": "No competitor match found for this SKU.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-VECTRA-BATT-BOOSTER",
+      "name": "EcoTech Vectra Battery Backup Booster",
+      "my_price": 30.99,
+      "currency": "USD",
+      "matches": [],
+      "cheapest": null,
+      "median_price": null,
+      "position": "no-data",
+      "suggestion": "No competitor match found for this SKU.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

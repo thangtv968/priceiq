@@ -1,0 +1,78 @@
+{
+  "store_name": "Kona Reef AZ",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "AI-NERO-5",
+      "name": "AI Nero 5 Powerhead Pump (3000 gph)",
+      "my_price": 249.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 5", 239.25, 0.98], ["Rival B", "AI Nero 5", 259.99, 0.98]],
+      "cheapest": 239.25,
+      "median_price": 249.62,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (249.99 > 249.62). A rival is $10.74 under you at 239.25.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AI-NERO-3",
+      "name": "AI Nero 3 Pump",
+      "my_price": 189.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 3", 179.43, 0.98], ["Rival B", "AI Nero 3", 189.99, 0.98]],
+      "cheapest": 179.43,
+      "median_price": 184.71,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (189.99 > 184.71). A rival breaks MAP at 179.43, under you.",
+      "map_price": 189.99,
+      "map_violation": true,
+      "map_details": [["Rival A", "AI Nero 3", 179.43]]
+    },
+    {
+      "sku": "AI-NERO-7",
+      "name": "AI Nero 7 Powerhead (4000 GPH)",
+      "my_price": 359.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 7", 328.99, 0.98], ["Rival B", "Nero 7 (MSRP)", 431.99, 0.97]],
+      "cheapest": 328.99,
+      "median_price": 380.49,
+      "position": "mid",
+      "suggestion": "MID (359.99). One rival under at 328.99, one over at 431.99 (MSRP).",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AI-PRIME-16HD",
+      "name": "AI Prime 16 HD Saltwater Reef Light (Black)",
+      "my_price": 264.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Prime 16 HD Reef", 264.99, 0.98]],
+      "cheapest": 264.99,
+      "median_price": 264.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (264.99 <= 264.99). Level with the rival.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AI-HYDRA-64HD",
+      "name": "AI Hydra 64 HD LED Reef Light (Black)",
+      "my_price": 759.99,
+      "currency": "USD",
+      "matches": [],
+      "cheapest": null,
+      "median_price": null,
+      "position": "no-data",
+      "suggestion": "NO-DATA. No live rival listing verified for the Hydra 64 HD.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "store_name": "Nemo's Reef",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-A360XE",
+      "name": "Kessil A360XE Tuna Blue LED Light",
+      "my_price": 449.99,
+      "currency": "USD",
+      "matches": [["Rival A", "A360XE Tuna Blue LED - Kessil", 499.0, 0.98], ["Rival B", "A360XE LED Light Tuna Blue - Kessil", 499.0, 0.98]],
+      "cheapest": 449.99,
+      "median_price": 499.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (449.99 <= 499). You undercut the 499 MAP that both rivals hold; strong price leader.",
+      "map_price": 499.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "A360XE Tuna Blue LED - Kessil", 499.0]]
+    },
+    {
+      "sku": "KESSIL-A80",
+      "name": "Kessil A80 Tuna Blue LED Light",
+      "my_price": 139.99,
+      "currency": "USD",
+      "matches": [["Rival A", "A80 Tuna Blue Nano LED - Kessil", 149.0, 0.98], ["Rival B", "A80 Tuna Blue Nano LED Light - Kessil", 149.0, 0.98]],
+      "cheapest": 139.99,
+      "median_price": 149.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (139.99 <= 149). Below the 149 MAP both rivals sit at.",
+      "map_price": 149.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "A80 Tuna Blue Nano LED - Kessil", 149.0]]
+    },
+    {
+      "sku": "KESSIL-SPECTRAL-CONTROLLER-X",
+      "name": "Kessil Spectral Controller X",
+      "my_price": 99.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Spectral Controller X - Kessil", 109.0, 0.99], ["Rival B", "Spectral Controller X - Kessil", 109.0, 0.99]],
+      "cheapest": 99.99,
+      "median_price": 109.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (99.99 <= 109). You break the 109 MAP both rivals hold.",
+      "map_price": 109.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Spectral Controller X - Kessil", 109.0]]
+    },
+    {
+      "sku": "KESSIL-A500X",
+      "name": "Kessil A500X Tuna Blue LED Light",
+      "my_price": 769.99,
+      "currency": "USD",
+      "matches": [["Rival A", "A500X Controllable LED Tuna Blue - Kessil", 849.0, 0.98], ["Rival B", "A500X Tuna Blue LED - Kessil", 849.0, 0.98]],
+      "cheapest": 769.99,
+      "median_price": 849.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (769.99 <= 849). ~79 under the 849 MAP; room to nudge up toward margin if desired.",
+      "map_price": 849.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "A500X Controllable LED Tuna Blue - Kessil", 849.0]]
+    },
+    {
+      "sku": "KESSIL-AP9X",
+      "name": "Kessil AP9X LED Light",
+      "my_price": 869.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AP9X LED Lighting Panel - Kessil", 959.0, 0.98], ["Rival B", "AP9X LED Lighting Panel - Kessil", 959.0, 0.98]],
+      "cheapest": 869.99,
+      "median_price": 959.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (869.99 <= 959). ~89 below the 959 MAP both rivals hold.",
+      "map_price": 959.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "AP9X LED Lighting Panel - Kessil", 959.0]]
+    },
+    {
+      "sku": "KESSIL-AP9X-MOUNTING-ARM",
+      "name": "Kessil AP9X Mounting Arm",
+      "my_price": 99.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AP9X Mounting Arm - Kessil", 109.0, 0.98]],
+      "cheapest": 99.99,
+      "median_price": 109.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (99.99 <= 109). Undercuts the single rival by ~9.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

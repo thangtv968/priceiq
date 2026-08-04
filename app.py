@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -66,7 +67,13 @@ def load_config() -> dict:
 
 
 @st.cache_data(ttl=3)
-def load_snapshot() -> dict:
+def load_snapshot(token: str | None = None) -> dict:
+    # Per-shop personalized demo: /?s=<token> loads snapshots/<token>.json
+    if token:
+        p = os.path.join(_HERE, "snapshots", f"{token}.json")
+        if os.path.exists(p):
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
     snap = storage.load_snapshot()
     if not snap and os.path.exists(DEMO_SNAPSHOT):
         with open(DEMO_SNAPSHOT, encoding="utf-8") as f:
@@ -102,7 +109,11 @@ def pill(position: str) -> str:
 
 # ==========================================================================
 config = load_config()
-snap = load_snapshot()
+_raw_token = st.query_params.get("s")
+if isinstance(_raw_token, list):
+    _raw_token = _raw_token[0] if _raw_token else None
+_token = re.sub(r"[^A-Za-z0-9_-]", "", _raw_token)[:32] if _raw_token else None
+snap = load_snapshot(_token)
 reports = snap.get("reports", [])
 scanned_at = snap.get("ts", "—")
 
@@ -114,8 +125,12 @@ with st.sidebar:
 
     telegram_on = bool((config.get("telegram") or {}).get("bot_token"))
     if DEMO_MODE:
-        st.info("🔎 **Live demo** — showing sample data. Live scanning is disabled "
-                "in the hosted demo; clone the repo to run real scans.")
+        if snap.get("store_name"):
+            st.success(f"🔎 **Snapshot prepared for {snap['store_name']}** — "
+                       "competitor names are anonymized. This is a live, interactive preview.")
+        else:
+            st.info("🔎 **Live demo** — showing sample data. Live scanning is disabled "
+                    "in the hosted demo; clone the repo to run real scans.")
     else:
         st.write("**Run a new scan**")
         send_alert = st.toggle("Send Telegram alert", value=telegram_on, disabled=not telegram_on,
@@ -134,19 +149,20 @@ with st.sidebar:
 
     st.divider()
     st.write("**Configuration**")
+    _sources = snap.get("sources") or [c["name"] for c in config.get("competitors", [])]
     st.markdown(
         f"- Matching model: `{config.get('embedding_model', 'all-MiniLM-L6-v2')}`\n"
         f"- Match threshold: `{config.get('match_threshold', 0.5)}`\n"
-        f"- Competitor sources: **{len(config.get('competitors', []))}**\n"
+        f"- Competitor sources: **{len(_sources)}**\n"
         f"- Telegram: {'✅ on' if telegram_on else '⚪ off'}"
     )
     with st.expander("Tracked sources"):
-        for c in config.get("competitors", []):
-            st.markdown(f"- **{c['name']}** · `{c['type']}`")
+        for _name in _sources:
+            st.markdown(f"- **{_name}**")
 
 # --- header ---------------------------------------------------------------
 st.title("💹 PriceIQ — Competitor Price Intelligence")
-_store = config.get("store_name", "")
+_store = snap.get("store_name") or config.get("store_name", "")
 st.caption((f"🏪 **{_store}** · " if _store else "")
            + "Scrape competitor prices → AI-match products across titles/SKUs → detect floor-price (MAP) violations & suggest repricing.")
 

@@ -1,0 +1,78 @@
+{
+  "store_name": "Dynamic Tank",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "ECOTECH-RADION-XR15-G6-PRO",
+      "name": "EcoTech Radion XR15 G6 Pro LED Light Fixture",
+      "my_price": 529.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Radion XR15 G6 Pro LED Light Fixture", 529.99, 0.99], ["Rival B", "Radion XR15 G6 Pro LED Light", 529.99, 0.99]],
+      "cheapest": 529.0,
+      "median_price": 529.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (529 <= 529.99). Effectively MAP-locked at ~530; you are a penny under. No real gap.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-RADION-XR30-G6-PRO",
+      "name": "EcoTech Radion XR30 G6 Pro LED Light Fixture",
+      "my_price": 999.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Radion XR30 G6 Pro LED Light Fixture", 999.99, 0.99]],
+      "cheapest": 999.0,
+      "median_price": 999.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (999 <= 999.99). MAP-locked at ~1000; rival identical. No margin to move.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-VECTRA-M2",
+      "name": "EcoTech Marine Vectra Quiet Drive M2 - 2,000 GPH DC Return Pump",
+      "my_price": 499.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Vectra M2 DC Return Pump Mobius Ready (2,000 GPH)", 499.99, 0.99]],
+      "cheapest": 499.99,
+      "median_price": 499.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST/TIED (499.99 <= 499.99). Matches rival exactly; MAP-consistent, no action.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-VORTECH-MP40WQD",
+      "name": "EcoTech Marine VorTech MP40wQD Mobius Ready QuietDrive Pump",
+      "my_price": 479.99,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP40wQD QuietDrive Propeller Wave Pump", 479.99, 0.99]],
+      "cheapest": 479.99,
+      "median_price": 479.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST/TIED (479.99 <= 479.99). Rival identical; price-parity, hold.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-VX-1-VERSA",
+      "name": "EcoTech Marine VX-1 Versa Peristaltic Dosing Pump (Single Head)",
+      "my_price": 229.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Versa VX-1 Dosing Pump (Single Head)", 229.99, 0.99]],
+      "cheapest": 229.99,
+      "median_price": 229.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST/TIED (229.99 <= 229.99). Matches rival; no gap.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

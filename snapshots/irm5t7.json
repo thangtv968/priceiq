@@ -1,0 +1,92 @@
+{
+  "store_name": "InsideReef",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "AI-NERO-5",
+      "name": "AI Nero 5 Powerhead",
+      "my_price": 239.25,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 5", 259.99, 0.98], ["Rival B", "Nero 5 (MSRP)", 299.99, 0.97]],
+      "cheapest": 259.99,
+      "median_price": 279.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (239.25 <= 259.99). Below MAP; you undercut every rival.",
+      "map_price": 259.99,
+      "map_violation": true,
+      "map_details": [["Rival A", "AI Nero 5", 259.99]]
+    },
+    {
+      "sku": "AI-NERO-3",
+      "name": "AI Nero 3 Powerhead",
+      "my_price": 179.43,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 3", 189.99, 0.98], ["Rival B", "Nero 3 (MSRP)", 227.99, 0.97]],
+      "cheapest": 189.99,
+      "median_price": 208.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (179.43 <= 189.99). Below the common $189.99 floor.",
+      "map_price": 189.99,
+      "map_violation": true,
+      "map_details": [["Rival A", "AI Nero 3", 189.99]]
+    },
+    {
+      "sku": "AI-NERO-7",
+      "name": "AI Nero 7 Powerhead",
+      "my_price": 328.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 7", 359.99, 0.98], ["Rival B", "Nero 7 (MSRP)", 431.99, 0.97]],
+      "cheapest": 359.99,
+      "median_price": 395.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (328.99 <= 359.99). You lead the field on Nero 7.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-MP40",
+      "name": "VorTech MP40mQD Propeller Pump",
+      "my_price": 469.99,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP40 QuietDrive", 479.99, 0.98], ["Rival B", "VorTech MP40 (MSRP)", 575.99, 0.96]],
+      "cheapest": 479.99,
+      "median_price": 527.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (469.99 <= 479.99). Under both rivals and well under MSRP.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-MP10",
+      "name": "VorTech MP10mQD Propeller Pump",
+      "my_price": 379.99,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP10 QuietDrive", 379.99, 0.98], ["Rival B", "VorTech MP10 QuietDrive", 369.0, 0.97]],
+      "cheapest": 369.0,
+      "median_price": 374.5,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (379.99 > 374.50). A rival sits $10.99 under at 369.00.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AI-PRIME-16HD",
+      "name": "AI Prime 16 HD Reef Light (Black)",
+      "my_price": 264.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Prime 16 HD Reef", 264.99, 0.98]],
+      "cheapest": 264.99,
+      "median_price": 264.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (264.99 <= 264.99). Priced level with the rival.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

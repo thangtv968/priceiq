@@ -1,0 +1,50 @@
+{
+  "store_name": "Shark & Reef",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-AP9X",
+      "name": "Kessil AP9X LED",
+      "my_price": 849.0,
+      "currency": "USD",
+      "matches": [["Rival A", "AP9X LED Lighting Panel - Kessil", 959.0, 0.98], ["Rival B", "AP9X LED Lighting Panel - Kessil", 959.0, 0.98]],
+      "cheapest": 849.0,
+      "median_price": 959.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (849 <= 959). You break the 959 MAP both rivals hold; room to hold or nudge up for margin.",
+      "map_price": 959.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "AP9X LED Lighting Panel - Kessil", 959.0]]
+    },
+    {
+      "sku": "KESSIL-A500X",
+      "name": "Kessil A500X Tuna Blue LED",
+      "my_price": 769.0,
+      "currency": "USD",
+      "matches": [["Rival A", "A500X Controllable LED Tuna Blue - Kessil", 849.0, 0.98], ["Rival B", "Kessil A500X Tuna Blue LED", 849.0, 0.98]],
+      "cheapest": 769.0,
+      "median_price": 849.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (769 <= 849). ~80 under the 849 MAP both rivals hold.",
+      "map_price": 849.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "A500X Controllable LED Tuna Blue - Kessil", 849.0]]
+    },
+    {
+      "sku": "KESSIL-A360X-REFUGIUM",
+      "name": "Kessil A360X Refugium LED Aquarium Light",
+      "my_price": 449.99,
+      "currency": "USD",
+      "matches": [["Rival A", "A360X Refugium LED Grow Light - Kessil", 499.0, 0.98]],
+      "cheapest": 449.99,
+      "median_price": 499.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (449.99 <= 499). Undercuts the 499 the rival lists; below the common Kessil floor.",
+      "map_price": 499.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "A360X Refugium LED Grow Light - Kessil", 499.0]]
+    }
+  ]
+}
