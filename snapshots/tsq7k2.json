@@ -1,0 +1,92 @@
+{
+  "store_name": "Top Shelf Aquatics",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-A360XE",
+      "name": "A360XE Tuna Blue LED Aquarium Light - Kessil",
+      "my_price": 499.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A360XE Tuna Blue LED Light", 449.99, 0.98], ["Rival B", "A360XE LED Light Tuna Blue - Kessil", 499.0, 0.99]],
+      "cheapest": 449.99,
+      "median_price": 474.995,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (499 > median 474.995). A rival undercuts at 449.99; you sit at the MAP ceiling with no room to raise.",
+      "map_price": 499.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil A360XE Tuna Blue LED Light", 449.99]]
+    },
+    {
+      "sku": "KESSIL-A80",
+      "name": "A80 Tuna Blue Nano LED Light - Kessil",
+      "my_price": 149.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A80 Tuna Blue LED Light", 139.99, 0.98], ["Rival B", "A80 Tuna Blue Nano LED Light - Kessil", 149.0, 0.99]],
+      "cheapest": 139.99,
+      "median_price": 144.495,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (149 > median 144.495). Rival A at 139.99 breaks MAP; you hold the 149 floor.",
+      "map_price": 149.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil A80 Tuna Blue LED Light", 139.99]]
+    },
+    {
+      "sku": "KESSIL-SPECTRAL-CONTROLLER-X",
+      "name": "Spectral Controller X - Kessil",
+      "my_price": 109.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil Spectral Controller X", 99.99, 0.99], ["Rival B", "Spectral Controller X - Kessil", 109.0, 0.99]],
+      "cheapest": 99.99,
+      "median_price": 104.495,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (109 > median 104.495). Rival A at 99.99 is below the 109 MAP floor.",
+      "map_price": 109.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil Spectral Controller X", 99.99]]
+    },
+    {
+      "sku": "KESSIL-AP9X",
+      "name": "AP9X LED Lighting Panel - Kessil",
+      "my_price": 959.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil AP9X LED", 849.0, 0.98], ["Rival B", "AP9X LED Lighting Panel - Kessil", 959.0, 0.99]],
+      "cheapest": 849.0,
+      "median_price": 904.0,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (959 > median 904). Rival A sits far below at 849; you are at MAP ceiling.",
+      "map_price": 959.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil AP9X LED", 849.0]]
+    },
+    {
+      "sku": "KESSIL-A500X",
+      "name": "A500X Controllable LED Aquarium Light - Tuna Blue - Kessil",
+      "my_price": 849.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A500X Tuna Blue LED", 769.0, 0.98], ["Rival B", "A500X Controllable LED - Tuna Blue - Kessil", 849.0, 0.99]],
+      "cheapest": 769.0,
+      "median_price": 809.0,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (849 > median 809). Rival A at 769 breaks the 849 MAP floor.",
+      "map_price": 849.0,
+      "map_violation": true,
+      "map_details": [["Rival A", "Kessil A500X Tuna Blue LED", 769.0]]
+    },
+    {
+      "sku": "KESSIL-A-SERIES-MOUNTING-ARM",
+      "name": "A-Series Mounting Arm - Kessil",
+      "my_price": 89.0,
+      "currency": "USD",
+      "matches": [["Rival A", "A-Series Mounting Arm", 79.99, 0.97]],
+      "cheapest": 79.99,
+      "median_price": 79.99,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (89 > 79.99). Single rival undercuts by ~9; consider matching to 79.99.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

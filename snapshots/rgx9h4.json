@@ -1,0 +1,50 @@
+{
+  "store_name": "Reef Goods",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "ECOTECH-RADION-XR15-G6-PRO",
+      "name": "Radion XR15 G6 Pro LED Light",
+      "my_price": 529.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Radion XR15 G6 Pro LED Light Fixture", 529.99, 0.99], ["Rival B", "EcoTech Radion XR15 G6 Pro LED Light Fixture", 529.0, 0.99]],
+      "cheapest": 529.0,
+      "median_price": 529.495,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (529.99 > median 529.495) by rounding only. Effectively MAP-locked at ~530; a rival is a penny under.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "API-REEF-MASTER-TEST-KIT",
+      "name": "Reef Master Test Kit",
+      "my_price": 34.99,
+      "currency": "USD",
+      "matches": [["Rival A", "API Reef Master Test Kit", 35.98, 0.98], ["Rival B", "Reef Master Test Kit - API", 35.98, 0.98]],
+      "cheapest": 34.99,
+      "median_price": 35.98,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (34.99 <= 35.98). Slight edge on a non-MAP consumable; good margin-neutral traffic driver.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AUTOAQUA-SMART-STIR",
+      "name": "Smart Stir - Magnetic Stirrer for Test Kits",
+      "my_price": 41.99,
+      "currency": "USD",
+      "matches": [["Rival A", "AutoAqua Smart Magnetic Stirrer for Testing", 41.99, 0.99], ["Rival B", "AutoAqua Smart Stir", 41.99, 0.99]],
+      "cheapest": 41.99,
+      "median_price": 41.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST/TIED (41.99 <= 41.99). Market-parity across rivals; hold.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "store_name": "Aquatic Warehouse",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "KESSIL-A160WE-TUNASUN",
+      "name": "Kessil A160WE Tuna Sun LED",
+      "my_price": 259.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A160WE Tuna Sun", 289.0, 0.98], ["Rival B", "Kessil A160WE Tuna Sun", 259.0, 0.98]],
+      "cheapest": 259.0,
+      "median_price": 274.0,
+      "position": "mid",
+      "suggestion": "MID (259.99). One rival is under ($259.00), one over ($289.00).",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-A80-TUNASUN",
+      "name": "Kessil A80 Tuna Sun Nano LED",
+      "my_price": 139.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A80 Tuna Sun", 149.0, 0.98], ["Rival B", "Kessil A80 Tuna Sun", 149.0, 0.98]],
+      "cheapest": 149.0,
+      "median_price": 149.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (139.00 <= 149.00). You beat both rivals by $10.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "KESSIL-A360X-TUNABLUE",
+      "name": "Kessil A360X Tuna Blue LED",
+      "my_price": 449.0,
+      "currency": "USD",
+      "matches": [["Rival A", "Kessil A360X Tuna Blue", 449.0, 0.98], ["Rival B", "Kessil A360X Tuna Blue (MSRP)", 499.0, 0.97]],
+      "cheapest": 449.0,
+      "median_price": 474.0,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (449.00 <= 449.00). Tied with the lowest rival, under MSRP.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-MP40QD",
+      "name": "EcoTech VorTech MP40QD Propeller Pump",
+      "my_price": 479.99,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP40 QuietDrive", 469.99, 0.97], ["Rival B", "VorTech MP40 QuietDrive", 479.99, 0.98]],
+      "cheapest": 469.99,
+      "median_price": 474.99,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (479.99 > 474.99). A rival is $10 under you at 469.99.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

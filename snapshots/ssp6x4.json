@@ -1,0 +1,64 @@
+{
+  "store_name": "South Seas Aquatics",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "AI-NERO-5",
+      "name": "Nero 5 Pump",
+      "my_price": 255.0,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 5", 239.25, 0.98], ["Rival B", "AI Nero 5", 259.99, 0.98]],
+      "cheapest": 239.25,
+      "median_price": 249.62,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (255.00 > 249.62). A rival is $15.75 under at 239.25.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "AI-NERO-3",
+      "name": "Nero 3 Pump",
+      "my_price": 199.0,
+      "currency": "USD",
+      "matches": [["Rival A", "AI Nero 3", 179.43, 0.98], ["Rival B", "AI Nero 3", 189.99, 0.98]],
+      "cheapest": 179.43,
+      "median_price": 184.71,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (199.00 > 184.71). Both rivals undercut you; one breaks MAP at 179.43.",
+      "map_price": 189.99,
+      "map_violation": true,
+      "map_details": [["Rival A", "AI Nero 3", 179.43]]
+    },
+    {
+      "sku": "ECOTECH-MP40",
+      "name": "VorTech MP40w Quiet Drive",
+      "my_price": 450.0,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP40 QuietDrive", 469.99, 0.98], ["Rival B", "VorTech MP40 QuietDrive", 479.99, 0.98]],
+      "cheapest": 469.99,
+      "median_price": 474.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (450.00 <= 469.99). You beat both rivals by ~$20-30.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECOTECH-MP10",
+      "name": "VorTech MP10w Quiet Drive",
+      "my_price": 369.0,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech MP10 QuietDrive", 379.99, 0.98], ["Rival B", "VorTech MP10 QuietDrive", 379.99, 0.98]],
+      "cheapest": 379.99,
+      "median_price": 379.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (369.00 <= 379.99). Under both rivals by $10.99.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "store_name": "Living Reef Orlando",
+  "currency": "USD",
+  "sources": ["Rival A", "Rival B", "Rival C"],
+  "ts": "2026-08-04T10:00:00+00:00",
+  "reports": [
+    {
+      "sku": "ECO-VORTECH-BATT-BACKUP",
+      "name": "EcoTech Marine VorTech Battery Back-up",
+      "my_price": 249.99,
+      "currency": "USD",
+      "matches": [["Rival A", "VorTech Battery Backup - EcoTech Marine", 215.0, 0.99], ["Rival B", "EcoTech Marine VorTech Battery Backup", 269.99, 0.99]],
+      "cheapest": 215.0,
+      "median_price": 242.5,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (249.99 > 242.50 median). Still $20 under the high rival, but a low rival sits at $215.00.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-XR15-MOUNT",
+      "name": "EcoTech Marine RMS XR15 G5 & G6 Tank Mount System",
+      "my_price": 129.99,
+      "currency": "USD",
+      "matches": [["Rival B", "EcoTech Marine RMS Single Radion Tank Mount (XR15)", 129.99, 0.95], ["Rival C", "EcoTech Marine RMS XR15 Tank Mount for Radion Lights", 149.99, 0.92]],
+      "cheapest": 129.99,
+      "median_price": 139.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (129.99 <= 129.99). Tied with the low rival, $20 under the other.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-XR30-MOUNT",
+      "name": "EcoTech Marine RMS XR30 G5 & G6 Tank Mount System",
+      "my_price": 139.99,
+      "currency": "USD",
+      "matches": [["Rival B", "EcoTech Marine RMS Single Radion Tank Mount (XR30)", 139.99, 0.95], ["Rival C", "EcoTech Marine Radion XR30 Single Arm RMS Tank Mount", 139.99, 0.94]],
+      "cheapest": 139.99,
+      "median_price": 139.99,
+      "position": "cheapest",
+      "suggestion": "CHEAPEST (139.99 <= 139.99). You are tied with both rivals.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-SLIDE-XR15",
+      "name": "EcoTech Marine RMS Slide for Radion XR15 G5 & G6",
+      "my_price": 34.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Multi-Light RMS Slide - EcoTech Marine (XR15)", 21.0, 0.9], ["Rival B", "EcoTech Marine RMS Slide Mount for Radion (XR15)", 34.99, 0.97]],
+      "cheapest": 21.0,
+      "median_price": 27.995,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (34.99 > 28.00 median). A rival sells the XR15 slide for $21.00.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    },
+    {
+      "sku": "ECO-RMS-SLIDE-XR30",
+      "name": "EcoTech Marine RMS Slide for Radion XR30 G5 & G6",
+      "my_price": 34.99,
+      "currency": "USD",
+      "matches": [["Rival A", "Multi-Light RMS Slide - EcoTech Marine (XR30)", 27.0, 0.9], ["Rival B", "EcoTech Marine RMS Slide Mount for Radion (XR30)", 34.99, 0.97]],
+      "cheapest": 27.0,
+      "median_price": 30.995,
+      "position": "expensive",
+      "suggestion": "EXPENSIVE (34.99 > 31.00 median). A rival sells the XR30 slide for $27.00.",
+      "map_price": null,
+      "map_violation": false,
+      "map_details": []
+    }
+  ]
+}
